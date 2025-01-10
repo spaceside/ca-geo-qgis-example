@@ -767,26 +767,26 @@ function fnc_project_color(values, context) {
 
 
 function exp_GeoDatabaseLiveR0_2rule0_eval_expression(context) {
-    // "Client.Job.Test" = '001-075.CPT01'
+    // "Client.Job.Test" LIKE '%CPT%'
 
     var feature = context.feature;
     
     if (feature.properties) {
-        return (feature.get('Client.Job.Test')  == '001-075.CPT01');
+        return (feature.get('Client.Job.Test').indexOf('CPT') > -1);
     } else {
-        return (feature.get('Client.Job.Test')  == '001-075.CPT01');
+        return (feature.get('Client.Job.Test').indexOf('CPT') > -1);
     }
 }
 
 
 function exp_GeoDatabaseLiveR0_2rule2_eval_expression(context) {
-    // 
+    // "Client.Job.Test" LIKE '%BH%'
 
     var feature = context.feature;
     
     if (feature.properties) {
-        return null;
+        return (feature.get('Client.Job.Test').indexOf('BH') > -1);
     } else {
-        return null;
+        return (feature.get('Client.Job.Test').indexOf('BH') > -1);
     }
 }
